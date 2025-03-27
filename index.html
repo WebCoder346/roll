@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Roll Numbers</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h2>Student Roll Number </h2>
+    <textarea id="names" rows="10" cols="30" placeholder="Enter student names, one per line"></textarea>
+    <br>
+    <button onclick="assignRollNumbers()">Assign Roll Numbers</button>
+    <h3>Results:</h3>
+    <pre id="output"></pre>
+
+    <script>
+        function assignRollNumbers() {
+            let input = document.getElementById("names").value;
+            let names = input.split('\n').map(name => name.trim()).filter(name => name);
+            names.sort(); // Sort names alphabetically
+            let result = names.map((name, index) => `${index + 1}. ${name}`).join('\n');
+            document.getElementById("output").textContent = result;
+        }
+    </script>
+</body>
+</html>
