@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assign Roll Numbers</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <h2>Student Roll Number </h2>
-    <textarea id="names" rows="10" cols="30" placeholder="Enter student names, one per line"></textarea>
-    <br>
-    <button onclick="assignRollNumbers()">Assign Roll Numbers</button>
-    <h3>Results:</h3>
-    <pre id="output"></pre>
 
-    <script>
-        function assignRollNumbers() {
-            let input = document.getElementById("names").value;
-            let names = input.split('\n').map(name => name.trim()).filter(name => name);
-            names.sort(); // Sort names alphabetically
-            let result = names.map((name, index) => `${index + 1}. ${name}`).join('\n');
-            document.getElementById("output").textContent = result;
-        }
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assign Roll Numbers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <h2>Student Roll Number </h2>
+  <textarea id="names" rows="10" cols="30" placeholder="Enter student names, one per line"></textarea>
+  <br>
+  <button onclick="assignRollNumbers()">Get Roll Numbers</button>
+  <h3>Results:</h3>
+  <pre id="output"></pre>
+  <footer>
+    <div class="box">
+      <tbody>
+      <tr>
+        <td><i class="fa-solid fa-user-tie"></i></td>
+        <td><a href="https://saurav6202.github.io/saurav.me">Saurav</a></td>
+      </tr>
+      <br>
+      <tr>
+        <td><i class="fa-brands fa-instagram"></i></a></td>
+        <td><a href="https://www.instagram.com/saurav__0_7/">saurav__0_7</a></td>
+      </tr>
+      <br>
+      <tr>
+        <td><i class="fa-brands fa-x-twitter"></i></td>
+        <td><a href="https://x.com/sauravcoder1">sauravcoder1</a></td>
+      </tr>
+</tbody>
+
+    </div>
+  </footer>
+  <script>
+    function assignRollNumbers() {
+      let input = document.getElementById("names").value;
+      let names = input.split('\n').map(name => name.trim()).filter(name => name);
+      names.sort(); // Sort names alphabetically
+      let result = names.map((name, index) => `${index + 1}. ${name}`).join('\n');
+      document.getElementById("output").textContent = result;
+    }
+  </script>
 </body>
+
 </html>
